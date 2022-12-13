@@ -8,7 +8,14 @@ from get_vacancies_hh import get_statistics_language_hh
 
 
 def create_table_vacancies(title, vacancies):
-    about_vacancies = [['Язык программирования', 'Вакансий найдено', 'Вакансий обработано', 'Средняя зарплата']]
+    about_vacancies = [
+        [
+            'Язык программирования',
+            'Вакансий найдено',
+            'Вакансий обработано',
+            'Средняя зарплата'
+        ]
+    ]
     for language, value in vacancies.items():
         about_vacancies.append([
             language, 
@@ -24,9 +31,19 @@ def create_table_vacancies(title, vacancies):
 
 def main():
     load_dotenv()
+    programming_languages = [
+        'Python',
+        'Java',
+        'Javascript',
+        'Go',
+        'C',
+        'C#',
+        'C++',
+        'PHP'
+    ]
     super_job_key = os.environ['SUPER_JOB_KEY']
-    statistics_language_sj = get_statistics_language_sj(super_job_key)
-    statistics_language_hh = get_statistics_language_hh()
+    statistics_language_sj = get_statistics_language_sj(super_job_key, programming_languages)
+    statistics_language_hh = get_statistics_language_hh(programming_languages)
 
     title_hh  = 'HeadHunter'
     title_sj  = 'SuperJob'
