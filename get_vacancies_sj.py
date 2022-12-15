@@ -35,8 +35,8 @@ def get_vacancies_statistics_sj(super_job_key, language='Python'):
                 continue
             average_salaries.append(predict_rub_salary(vacancy['payment_from'], 
                                                         vacancy['payment_to']))
-            if vacancies['more'] == False:
-                break
+        if vacancies['more'] == False:
+            break
                                    
     if len(average_salaries):
         average_salary = int(sum(average_salaries) / len(average_salaries))
