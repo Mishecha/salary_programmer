@@ -38,7 +38,7 @@ def get_vacancies_statistics_sj(super_job_key, language='Python'):
         if vacancies['more'] == False:
             break
                                    
-    if len(average_salaries):
+    if average_salaries:
         average_salary = int(sum(average_salaries) / len(average_salaries))
     else:
         average_salary = None
