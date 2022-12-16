@@ -34,7 +34,7 @@ def get_vacancies_statistics_hh(language='Python'):
                 break
             average_salaries.append(predict_rub_salary(vacancy['salary']['from'], 
                                                         vacancy['salary']['to']))
-    if len(average_salaries):
+    if average_salaries:
         average_salary = int(sum(average_salaries) / len(average_salaries))
     else:
         average_salary = None
